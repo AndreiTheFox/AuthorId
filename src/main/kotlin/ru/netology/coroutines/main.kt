@@ -34,10 +34,10 @@ fun main() {
                     }.awaitAll().map {
                         item->
                         async {
-                            FullPost(item, getAuthor(client,item.post.id) )
+                            FullPost(item, getAuthor(client,item.post.authorId) )
                         }.await()
                     }
-                println(posts)
+                    println(posts)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
